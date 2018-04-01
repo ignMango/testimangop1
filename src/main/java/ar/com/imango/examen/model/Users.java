@@ -20,10 +20,10 @@ public class Users implements Serializable {
     private String email;
 
     @Column(name = "first_name", nullable = false)
-    private String nombre;
+    private String first_name;
 
     @Column(name = "last_name", nullable = false)
-    private String apellido;
+    private String last_name;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
@@ -34,8 +34,8 @@ public class Users implements Serializable {
 
     public Users(String email, String nombre, String apellido) {
         this.email = email;
-        this.nombre = nombre;
-        this.apellido = apellido;
+        this.first_name = nombre;
+        this.last_name = apellido;
     }
 
     public Long getId() {
@@ -54,20 +54,20 @@ public class Users implements Serializable {
         this.email = email;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getLast_name() {
+        return last_name;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
     public Set<Loans> getLoans() {
