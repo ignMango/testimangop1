@@ -21,8 +21,7 @@ public class UsersController {
     @GetMapping("/{id}")
     public ResponseEntity<?> getUser(@PathVariable(value = "id") Long id){
         try {
-            Optional<Users> result = repository.findById(id);
-            return ResponseEntity.ok(result.get());
+            return ResponseEntity.ok(repository.findUsersBy(id));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }

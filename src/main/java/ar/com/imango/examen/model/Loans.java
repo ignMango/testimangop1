@@ -15,14 +15,13 @@ public class Loans implements Serializable {
     @Column(name = "total")
     private Double total;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    private Users user;
+    @Column(name = "user_id")
+    private Long user;
 
     public Loans() {
     }
 
-    public Loans(Double total, Users user) {
+    public Loans(Double total, Long user) {
         this.total = total;
         this.user = user;
     }
@@ -43,11 +42,11 @@ public class Loans implements Serializable {
         this.total = total;
     }
 
-    public Users getUserId() {
+    public Long getUserId() {
         return user;
     }
 
-    public void setUserId(Users userId) {
+    public void setUserId(Long userId) {
         this.user = userId;
     }
 }

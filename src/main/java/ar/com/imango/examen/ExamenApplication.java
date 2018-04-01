@@ -33,19 +33,22 @@ public class ExamenApplication implements CommandLineRunner{
 		usuarios.add(new Users("test3@app.com.ar", "PAOLA", "ARGENTO"));
 		usuarios.add(new Users("test4@app.com.ar", "COQUI", "ARGENTO"));
 
+		int count = 1;
+
 		for(Users usuario: usuarios) {
-			usuario.setLoans(this.setLoans(usuario));
+			usuario.setLoans(this.setLoans(count));
 			repository.save(usuario);
+			count ++;
 		}
 
 	}
 
-	private Set<Loans> setLoans(Users usuario) {
+	private Set<Loans> setLoans(int count) {
 		Set<Loans> loans = new HashSet<>();
-		loans.add(new Loans(2500.0, usuario));
-		loans.add(new Loans(2400.0, usuario));
-		loans.add(new Loans(2200.0, usuario));
-		loans.add(new Loans(2300.0, usuario));
+		loans.add(new Loans(2500.0, (long) count ));
+		loans.add(new Loans(2400.0, (long) count));
+		loans.add(new Loans(2200.0, (long) count));
+		loans.add(new Loans(2300.0, (long) count));
 		return loans;
 	}
 }
