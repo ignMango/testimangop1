@@ -27,7 +27,7 @@ Ahora esta con las credenciales de heroku
 
 + abrir `src/main/resources/application.properties`
 
-+ cambiar `spring.datasource.username` and `spring.datasource.password` as per your mysql installation
++ cambiar `spring.datasource.username` and `spring.datasource.password`
 
 **2. correr app usando maven**
 
@@ -49,7 +49,7 @@ La app arrancara en <http://localhost:8080>.
 The app defines following CRUD APIs.
 
     
-    GET /user/{Id} //{1} {11} {21}
+    GET /user/{Id} //{1} {2} {3} {4}
     
     POST /user/add
     
